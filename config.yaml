@@ -1,4 +1,1 @@
-mysql_host: 'classmysql.engr.oregonstate.edu'
-mysql_user: 'cs340_kocherag'
-mysql_password: '2845'
-mysql_db: 'cs340_kocherag'
+url: "mysql://cs340_kocherag:2845@classmysql.engr.oregonstate.edu/cs340_kocherag"
