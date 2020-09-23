@@ -3,6 +3,27 @@
         <title>Week 0 - Project Setup - George Kochera - kocherag@oregonstate.edu</title>
     </head>
     <body>
-        {{ content }}
+        <table>
+            {% for key, value in content.items() %}
+                {% if loop.first %}
+                    <tr>
+                        {% for key, value in value.items() %}
+                            <th>{{ key }}</th>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        {% for key, value in value.items() %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% else %}
+                <tr>
+                    {% for key, value in value.items() %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
     </body>
 </html>

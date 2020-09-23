@@ -21,12 +21,18 @@ def index():
         metadata.reflect()
         bsg_people = Table("bsg_people", metadata)
         select_query = select([bsg_people])
-        result = eng.execute(select_query)
+        result = eng.execute(select_query).fetchall()
+        data = {}
+        index = 0
         for row in result:
-            print(row)
+            data[index] = {}
+            for key, value in row.items():
+                data[index]["{}".format(key)] = "{}".format(value)
+            index += 1
+        print(type(data))
     
 
-    return render_template("content.jinja2", content=str(response_string))
+    return render_template("content.jinja2", content=data)
 
 if __name__ == '__main__':
     app.run(port=5001)
