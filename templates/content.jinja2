@@ -1,8 +1,12 @@
 <!DOCTYPE html>
     <head>
-        <title>Week 0 - Project Setup - George Kochera - kocherag@oregonstate.edu</title>
+        <title>{{ info.title }} - {{ info.author }}</title>
     </head>
     <body>
+        <h1>{{ info.title }}</h1>
+        <h3>Class: {{ info.class }}</h3>
+        <p>Query was run on {{ info.date }} at {{ info.time }} by {{ info.author }} who can be reached at {{ info.email }}.
+         </p>
         <table>
             {% for key, value in content.items() %}
                 {% if loop.first %}
